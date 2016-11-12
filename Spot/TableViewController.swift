@@ -9,11 +9,16 @@
 import UIKit
 import Alamofire
 
+struct post {
+    let image: UIImage!
+    let name: String!
+}
+
 class TableViewController: UITableViewController {
     
     var searchURL = "https://api.spotify.com/v1/search?q=Shawn+Mendes&type=track"
     
-    var names = [String]()
+    var posts = [post]()
     
     typealias JSONStandard = [String: AnyObject]
     
@@ -40,9 +45,20 @@ class TableViewController: UITableViewController {
                         
                         let name = item["name"] as! String
                         print(item)
-                        names.append(name)
                         
-                        self.tableView.reloadData()
+                        if let album = item["album"] as? JSONStandard {
+                            if let images = album["images"] as? [JSONStandard] {
+                                let imageData = images[0]
+                                let mainImageURL = imageData["url"]
+                                let mainImageData = NSData(contentsOf: URL(string: mainImageURL as! String)!)
+                                
+                                let mainImage = UIImage(data: mainImageData as! Data)
+                                
+                                posts.append(post.init(image: mainImage, name: name))
+                                self.tableView.reloadData()
+                                
+                            }
+                        }
                     }
                 }
             }
@@ -54,13 +70,17 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return names.count
+        return posts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         
-        cell?.textLabel?.text = names[indexPath.row]
+        let mainImageView = cell?.viewWithTag(2) as! UIImageView
+        mainImageView.image = posts[indexPath.row].image
+        
+        let mainLabel = cell?.viewWithTag(1) as! UILabel
+        mainLabel.text = posts[indexPath.row].name
         
         return cell!
     }
