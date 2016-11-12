@@ -13,6 +13,7 @@
 		91A2862B1DD63D1F0094FF96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A286291DD63D1F0094FF96 /* Main.storyboard */; };
 		91A2862D1DD63D1F0094FF96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91A2862C1DD63D1F0094FF96 /* Assets.xcassets */; };
 		91A286301DD63D1F0094FF96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A2862E1DD63D1F0094FF96 /* LaunchScreen.storyboard */; };
+		91A286381DD799D00094FF96 /* AudioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A286371DD799D00094FF96 /* AudioVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		91A2862C1DD63D1F0094FF96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91A2862F1DD63D1F0094FF96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91A286311DD63D1F0094FF96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91A286371DD799D00094FF96 /* AudioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				91A286251DD63D1F0094FF96 /* AppDelegate.swift */,
 				91A286271DD63D1F0094FF96 /* TableViewController.swift */,
 				91A286291DD63D1F0094FF96 /* Main.storyboard */,
+				91A286371DD799D00094FF96 /* AudioVC.swift */,
 				91A2862C1DD63D1F0094FF96 /* Assets.xcassets */,
 				91A2862E1DD63D1F0094FF96 /* LaunchScreen.storyboard */,
 				91A286311DD63D1F0094FF96 /* Info.plist */,
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91A286281DD63D1F0094FF96 /* TableViewController.swift in Sources */,
+				91A286381DD799D00094FF96 /* AudioVC.swift in Sources */,
 				91A286261DD63D1F0094FF96 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

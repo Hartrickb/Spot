@@ -84,6 +84,16 @@ class TableViewController: UITableViewController {
         
         return cell!
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indexPath = self.tableView.indexPathForSelectedRow?.row
+        
+        let viewController = segue.destination as! AudioVC
+        
+        viewController.image = posts[indexPath!].image
+        viewController.mainSongTitle = posts[indexPath!].name
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

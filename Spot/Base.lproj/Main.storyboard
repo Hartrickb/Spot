@@ -49,6 +49,9 @@
                                         <constraint firstItem="cLG-zw-VXM" firstAttribute="top" secondItem="cF2-qG-8uX" secondAttribute="topMargin" constant="-8" id="hXL-ys-MPp"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="2G4-Fj-14B" kind="show" id="0QL-8e-XXN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -62,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="960.79999999999995" y="111.99400299850076"/>
         </scene>
-        <!--View Controller-->
+        <!--AudioVC-->
         <scene sceneID="wmG-6a-0Zm">
             <objects>
-                <viewController id="2G4-Fj-14B" sceneMemberID="viewController">
+                <viewController id="2G4-Fj-14B" customClass="AudioVC" customModule="Spot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fNl-Dx-AJb"/>
                         <viewControllerLayoutGuide type="bottom" id="CQB-ij-YUZ"/>
@@ -74,18 +77,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gAR-aP-idr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gAR-aP-idr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhh-0f-wlr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AXy-rf-e8U">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIR-yU-JO8">
+                                            <rect key="frame" x="67" y="396" width="240" height="56"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="vFB-VO-13K"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YyL-Qz-Y3e">
+                                            <rect key="frame" x="67" y="148" width="240" height="240"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="YyL-Qz-Y3e" secondAttribute="height" multiplier="1:1" id="Pq6-gU-E4t"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lIR-yU-JO8" firstAttribute="leading" secondItem="AXy-rf-e8U" secondAttribute="leading" constant="67" id="0LG-8x-qUL"/>
+                                        <constraint firstItem="lIR-yU-JO8" firstAttribute="top" secondItem="YyL-Qz-Y3e" secondAttribute="bottom" constant="8" id="BHS-Gy-HNA"/>
+                                        <constraint firstItem="YyL-Qz-Y3e" firstAttribute="top" secondItem="AXy-rf-e8U" secondAttribute="top" constant="148" id="F7a-ML-Uj2"/>
+                                        <constraint firstItem="YyL-Qz-Y3e" firstAttribute="leading" secondItem="AXy-rf-e8U" secondAttribute="leading" constant="67" id="QQj-l8-tec"/>
+                                        <constraint firstAttribute="trailing" secondItem="lIR-yU-JO8" secondAttribute="trailing" constant="68" id="Qzr-5p-tMP"/>
+                                        <constraint firstAttribute="trailing" secondItem="YyL-Qz-Y3e" secondAttribute="trailing" constant="68" id="zDU-XL-hGQ"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gAR-aP-idr" firstAttribute="height" secondItem="QvF-iX-xqu" secondAttribute="height" id="2ef-Jd-rA2"/>
                             <constraint firstItem="gAR-aP-idr" firstAttribute="centerY" secondItem="QvF-iX-xqu" secondAttribute="centerY" id="Dnt-Gn-SB5"/>
+                            <constraint firstItem="vhh-0f-wlr" firstAttribute="height" secondItem="QvF-iX-xqu" secondAttribute="height" id="Rvn-cV-IaK"/>
+                            <constraint firstItem="vhh-0f-wlr" firstAttribute="width" secondItem="QvF-iX-xqu" secondAttribute="width" id="bkI-9w-nzB"/>
+                            <constraint firstItem="vhh-0f-wlr" firstAttribute="centerY" secondItem="QvF-iX-xqu" secondAttribute="centerY" id="rm4-fr-Aef"/>
                             <constraint firstItem="gAR-aP-idr" firstAttribute="width" secondItem="QvF-iX-xqu" secondAttribute="width" id="uPN-de-HG0"/>
+                            <constraint firstItem="vhh-0f-wlr" firstAttribute="centerX" secondItem="QvF-iX-xqu" secondAttribute="centerX" id="xBf-uP-Wck"/>
                             <constraint firstItem="gAR-aP-idr" firstAttribute="centerX" secondItem="QvF-iX-xqu" secondAttribute="centerX" id="y3b-PO-pEw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="background" destination="gAR-aP-idr" id="Jts-dt-ltO"/>
+                        <outlet property="mainImageView" destination="YyL-Qz-Y3e" id="mcM-P7-Op5"/>
+                        <outlet property="songTitle" destination="lIR-yU-JO8" id="ukM-TP-biB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcS-0j-1TJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
