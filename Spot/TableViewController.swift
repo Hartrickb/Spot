@@ -8,10 +8,14 @@
 
 import UIKit
 import Alamofire
+import AVFoundation
+
+var player = AVAudioPlayer()
 
 struct post {
     let image: UIImage!
     let name: String!
+    let previewURL: String!
 }
 
 class TableViewController: UITableViewController {
@@ -44,6 +48,7 @@ class TableViewController: UITableViewController {
                         let item = items[i] 
                         
                         let name = item["name"] as! String
+                        let previewURL = item["preview_url"] as! String
                         print(item)
                         
                         if let album = item["album"] as? JSONStandard {
@@ -54,7 +59,7 @@ class TableViewController: UITableViewController {
                                 
                                 let mainImage = UIImage(data: mainImageData as! Data)
                                 
-                                posts.append(post.init(image: mainImage, name: name))
+                                posts.append(post.init(image: mainImage, name: name, previewURL: previewURL))
                                 self.tableView.reloadData()
                                 
                             }
@@ -92,6 +97,7 @@ class TableViewController: UITableViewController {
         
         viewController.image = posts[indexPath!].image
         viewController.mainSongTitle = posts[indexPath!].name
+        viewController.mainPreviewURL = posts[indexPath!].previewURL
         
     }
 
