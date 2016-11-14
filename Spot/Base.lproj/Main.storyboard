@@ -101,6 +101,14 @@
                                                 <constraint firstAttribute="width" secondItem="YyL-Qz-Y3e" secondAttribute="height" multiplier="1:1" id="Pq6-gU-E4t"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIF-De-gIw">
+                                            <rect key="frame" x="164" y="540" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="playPause:" destination="2G4-Fj-14B" eventType="touchUpInside" id="1QZ-2I-IiM"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="lIR-yU-JO8" firstAttribute="leading" secondItem="AXy-rf-e8U" secondAttribute="leading" constant="67" id="0LG-8x-qUL"/>
@@ -129,6 +137,7 @@
                     <connections>
                         <outlet property="background" destination="gAR-aP-idr" id="Jts-dt-ltO"/>
                         <outlet property="mainImageView" destination="YyL-Qz-Y3e" id="mcM-P7-Op5"/>
+                        <outlet property="playPauseButton" destination="mIF-De-gIw" id="2oz-i8-p3n"/>
                         <outlet property="songTitle" destination="lIR-yU-JO8" id="ukM-TP-biB"/>
                     </connections>
                 </viewController>
